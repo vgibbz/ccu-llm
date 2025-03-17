@@ -2,3 +2,5 @@ openai
 streamlit
 llama-index
 langchain
+python-dotenv
+llama-index-embeddings-openai

@@ -2,9 +2,14 @@ import os
 import openai
 import streamlit as st
 from llama_index.core import GPTVectorStoreIndex, StorageContext, load_index_from_storage
+from llama_index.core import Settings
+from llama_index.embeddings.openai import OpenAIEmbedding
 
 # Load OpenAI API Key
 openai.api_key = os.getenv("OPENAI_API_KEY")
+
+# ✅ Set the embedding model
+Settings.embed_model = OpenAIEmbedding()
 
 # Load stored index
 storage_context = StorageContext.from_defaults(persist_dir="./index_storage")
