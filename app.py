@@ -4,6 +4,10 @@ import streamlit as st
 from llama_index.core import GPTVectorStoreIndex, StorageContext, load_index_from_storage
 from llama_index.core import Settings
 from llama_index.embeddings.openai import OpenAIEmbedding
+from llama_index.llms.openai import OpenAI
+
+# Set the LLM
+Settings.llm = OpenAI(model="gpt-3.5-turbo")  # ✅ Set LLM
 
 # Load OpenAI API Key
 openai.api_key = os.getenv("OPENAI_API_KEY")
